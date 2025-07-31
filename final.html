@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Tags Playground</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #343a40;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+    }
+
+    th, td {
+      padding: 16px;
+      border: 1px solid #dee2e6;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    td code {
+      background: #f8f9fa;
+      padding: 4px 6px;
+      display: inline-block;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      font-family: monospace;
+      font-size: 14px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #fefefe;
+      resize: vertical;
+    }
+
+    iframe {
+      width: 100%;
+      height: 160px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    button {
+      margin-top: 8px;
+      padding: 8px 16px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #218838;
+    }
+
+    .tag-header {
+      font-weight: bold;
+      color: #007bff;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<h1>HTML LEARNING TOOLS</h1>
+
+<table>
+  <tr>
+    <th>Tag</th>
+    <th>Example Code</th>
+    <th>Browser View</th>
+  </tr>
+
+  <!-- Heading -->
+  <tr>
+    <td class="tag-header">&lt;h1&gt; to &lt;h6&gt;</td>
+    <td>
+      <textarea id="code1">
+<h1>Main Heading</h1>
+<h2>Sub Heading</h2>
+<h3>Section</h3></textarea>
+      <button onclick="runCode('code1','view1')">Run</button>
+    </td>
+    <td><iframe id="view1"></iframe></td>
+  </tr>
+
+  <!-- Paragraph -->
+  <tr>
+    <td class="tag-header">&lt;p&gt;</td>
+    <td>
+      <textarea id="code2">
+<p>This is a paragraph to demonstrate the &lt;p&gt; tag in HTML.</p></textarea>
+      <button onclick="runCode('code2','view2')">Run</button>
+    </td>
+    <td><iframe id="view2"></iframe></td>
+  </tr>
+
+  <!-- List -->
+  <tr>
+    <td class="tag-header">&lt;ul&gt; &amp; &lt;ol&gt;</td>
+    <td>
+      <textarea id="code3">
+<ul>
+  <li>Apple</li>
+  <li>Banana</li>
+</ul>
+<ol>
+  <li>First</li>
+  <li>Second</li>
+</ol></textarea>
+      <button onclick="runCode('code3','view3')">Run</button>
+    </td>
+    <td><iframe id="view3"></iframe></td>
+  </tr>
+
+  <!-- Table -->
+  <tr>
+    <td class="tag-header">&lt;table&gt;</td>
+    <td>
+      <textarea id="code4">
+<table border="1">
+  <tr><th>Name</th><th>Age</th></tr>
+  <tr><td>Alice</td><td>24</td></tr>
+</table></textarea>
+      <button onclick="runCode('code4','view4')">Run</button>
+    </td>
+    <td><iframe id="view4"></iframe></td>
+  </tr>
+
+  <!-- Link -->
+  <tr>
+    <td class="tag-header">&lt;a&gt;</td>
+    <td>
+      <textarea id="code5">
+<a href="https://www.openai.com" target="_blank">Visit OpenAI</a></textarea>
+      <button onclick="runCode('code5','view5')">Run</button>
+    </td>
+    <td><iframe id="view5"></iframe></td>
+  </tr>
+
+  <!-- Image -->
+  <tr>
+    <td class="tag-header">&lt;img&gt;</td>
+    <td>
+      <textarea id="code6">
+<img src="https://picsum.photos/150" alt="placeholder Image"></textarea>
+      <button onclick="runCode('code6','view6')">Run</button>
+    </td>
+    <td><iframe id="view6"></iframe></td>
+  </tr>
+
+  <!-- Form Elements -->
+  <tr>
+    <td class="tag-header">&lt;input&gt;, &lt;textarea&gt;, &lt;select&gt;</td>
+    <td>
+      <textarea id="code7">
+<form>
+  Name: <input type="text"><br>
+  Bio: <textarea></textarea><br>
+  Gender: 
+  <select>
+    <option>Male</option>
+    <option>Female</option>
+  </select>
+</form></textarea>
+      <button onclick="runCode('code7','view7')">Run</button>
+    </td>
+    <td><iframe id="view7"></iframe></td>
+  </tr>
+
+  <!-- Button -->
+  <tr>
+    <td class="tag-header">&lt;button&gt;</td>
+    <td>
+      <textarea id="code8">
+<button onclick="alert('Hello!')">Click Me</button></textarea>
+      <button onclick="runCode('code8','view8')">Run</button>
+    </td>
+    <td><iframe id="view8"></iframe></td>
+  </tr>
+
+  <!-- Div and Span -->
+  <tr>
+    <td class="tag-header">&lt;div&gt; &amp; &lt;span&gt;</td>
+    <td>
+      <textarea id="code9">
+<div style="background:#eee; padding:10px;">
+  This is a <span style="color:red;">highlighted</span> span inside a div.
+</div></textarea>
+      <button onclick="runCode('code9','view9')">Run</button>
+    </td>
+    <td><iframe id="view9"></iframe></td>
+  </tr>
+
+  <!-- Semantic Tags -->
+  <tr>
+    <td class="tag-header">&lt;header&gt;, &lt;footer&gt;, &lt;section&gt;</td>
+    <td>
+      <textarea id="code10">
+<header style="background:#007BFF;color:white;padding:10px;">Header Area</header>
+<section>This is a section.</section>
+<footer style="background:#343a40;color:white;padding:10px;">Footer Area</footer></textarea>
+      <button onclick="runCode('code10','view10')">Run</button>
+    </td>
+    <td><iframe id="view10"></iframe></td>
+  </tr>
+
+  <!-- Bold -->
+  <tr>
+    <td class="tag-header">&lt;b&gt;</td>
+    <td>
+      <textarea id="code11">
+<p>This is <b>bold</b> text.</p></textarea>
+      <button onclick="runCode('code11','view11')">Run</button>
+    </td>
+    <td><iframe id="view11"></iframe></td>
+  </tr>
+
+  <!-- Italic -->
+  <tr>
+    <td class="tag-header">&lt;i&gt;</td>
+    <td>
+      <textarea id="code12">
+<p>This is <i>italic</i> text.</p></textarea>
+      <button onclick="runCode('code12','view12')">Run</button>
+    </td>
+    <td><iframe id="view12"></iframe></td>
+  </tr>
+
+  <!-- Underline -->
+  <tr>
+    <td class="tag-header">&lt;u&gt;</td>
+    <td>
+      <textarea id="code13">
+<p>This is <u>underlined</u> text.</p></textarea>
+      <button onclick="runCode('code13','view13')">Run</button>
+    </td>
+    <td><iframe id="view13"></iframe></td>
+  </tr>
+
+  <!-- Mark -->
+  <tr>
+    <td class="tag-header">&lt;mark&gt;</td>
+    <td>
+      <textarea id="code14">
+<p>This is <mark>highlighted</mark> text.</p></textarea>
+      <button onclick="runCode('code14','view14')">Run</button>
+    </td>
+    <td><iframe id="view14"></iframe></td>
+  </tr>
+
+  <!-- Line Break -->
+  <tr>
+    <td class="tag-header">&lt;br&gt;</td>
+    <td>
+      <textarea id="code15">
+Line 1<br>Line 2<br>Line 3</textarea>
+      <button onclick="runCode('code15','view15')">Run</button>
+    </td>
+    <td><iframe id="view15"></iframe></td>
+  </tr>
+
+  <!-- Horizontal Rule -->
+  <tr>
+    <td class="tag-header">&lt;hr&gt;</td>
+    <td>
+      <textarea id="code16">
+<p>Above the line</p>
+<hr>
+<p>Below the line</p></textarea>
+      <button onclick="runCode('code16','view16')">Run</button>
+    </td>
+    <td><iframe id="view16"></iframe></td>
+  </tr>
+
+  <!-- Small -->
+  <tr>
+    <td class="tag-header">&lt;small&gt;</td>
+    <td>
+      <textarea id="code17">
+<p>This is <small>small</small> text.</p></textarea>
+      <button onclick="runCode('code17','view17')">Run</button>
+    </td>
+    <td><iframe id="view17"></iframe></td>
+  </tr>
+
+  <!-- Big -->
+  <tr>
+    <td class="tag-header">&lt;big&gt;</td>
+    <td>
+      <textarea id="code18">
+<p>This is <big>big</big> text.</p></textarea>
+      <button onclick="runCode('code18','view18')">Run</button>
+    </td>
+    <td><iframe id="view18"></iframe></td>
+  </tr>
+</table>
+
+<script>
+  function runCode(codeId, viewId) {
+    const code = document.getElementById(codeId).value;
+    const iframe = document.getElementById(viewId);
+    iframe.srcdoc = code;
+  }
+</script>
+
+</body>
+</html>
