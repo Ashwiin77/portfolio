@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ECE Book Catalogue</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .catalogue-container {
+      max-width: 1000px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0056b3;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #0056b3;
+      padding-bottom: 10px;
+    }
+
+    .book-card {
+      display: flex;
+      background-color: #eef3fb;
+      border-left: 5px solid #0056b3;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      overflow: hidden;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .book-card:hover {
+      background-color: #dbe9ff;
+      transform: scale(1.01);
+    }
+
+    .book-card img {
+      width: 130px;
+      height: 170px;
+      object-fit: cover;
+    }
+
+    .book-details {
+      padding: 15px 20px;
+      flex-grow: 1;
+    }
+
+    .book-details a {
+      color: #0056b3;
+      text-decoration: none;
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+
+    .book-details div {
+      font-size: 0.95em;
+      margin-top: 6px;
+      color: #333;
+    }
+
+    .description {
+      margin-top: 10px;
+      font-style: italic;
+      color: #444;
+    }
+
+    .price {
+      font-weight: bold;
+      margin-top: 8px;
+      color: #000;
+    }
+
+    .add-to-cart {
+      margin-top: 12px;
+    }
+
+    .add-to-cart button {
+      padding: 8px 14px;
+      background-color: #0056b3;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .add-to-cart button:hover {
+      background-color: #004092;
+    }
+  </style>
+</head>
+<body>
+  <div class="catalogue-container">
+    <h2>ECE Book Catalogue</h2>
+
+    <div class="book-card">
+      <img src="communication.jpg" alt="Communication Systems" />
+      <div class="book-details">
+        <a href="#">Communication Systems</a>
+        <div>Author: Simon Haykin</div>
+        <div>Publication: Wiley</div>
+        <div class="price">Price: ₹750</div>
+        <div class="description">Comprehensive coverage on analog and digital communication principles with real-world applications.</div>
+        <div class="add-to-cart">
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <img src="digital.jpg" alt="Digital Electronics" />
+      <div class="book-details">
+        <a href="#">Digital Electronics</a>
+        <div>Author: Morris Mano</div>
+        <div>Publication: Pearson</div>
+        <div class="price">Price: ₹680</div>
+        <div class="description">Essential fundamentals of digital logic design, circuit design, and sequential logic.</div>
+        <div class="add-to-cart">
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <img src="micro.jpg" alt="Microprocessors and Interfacing" />
+      <div class="book-details">
+        <a href="#">Microprocessors and Interfacing</a>
+        <div>Author: Douglas Hall</div>
+        <div>Publication: McGraw-Hill</div>
+        <div class="price">Price: ₹720</div>
+        <div class="description">Covers architecture, programming, and interfacing of 8085 and 8086 microprocessors with examples.</div>
+        <div class="add-to-cart">
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <img src="signals.jpg" alt="Signals and Systems" />
+      <div class="book-details">
+        <a href="#">Signals and Systems</a>
+        <div>Author: Alan V. Oppenheim</div>
+        <div>Publication: Pearson</div>
+        <div class="price">Price: ₹699</div>
+        <div class="description">Fundamentals of signal processing, Fourier analysis, and linear systems for ECE students.</div>
+        <div class="add-to-cart">
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <img src="design.jpg" alt="VLSI Design" />
+      <div class="book-details">
+        <a href="#">VLSI Design</a>
+        <div>Author: K. Lal Kishore</div>
+        <div>Publication: I.K. International</div>
+        <div class="price">Price: ₹580</div>
+        <div class="description">A practical guide on digital CMOS VLSI design, layout, and fabrication processes.</div>
+        <div class="add-to-cart">
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

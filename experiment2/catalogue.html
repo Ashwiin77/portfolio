@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Catalogue Page</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background-color: #0056b3;
+      color: white;
+    }
+
+    .book-img {
+      width: 80px;
+      height: auto;
+    }
+
+    .cart-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cart-btn img {
+      width: 100px;
+    }
+
+    .dept-col {
+      font-weight: bold;
+      width: 60px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <table>
+    <tr>
+      <th>Department</th>
+      <th>Snapshot</th>
+      <th>Book Details</th>
+      <th>Price</th>
+      <th>Add to Cart</th>
+    </tr>
+
+    <tr>
+      <td class="dept-col">CSE</td>
+      <td><img src="xml.jpg" alt="XML Bible" class="book-img"></td>
+      <td>
+        <strong>Book:</strong> XML Bible<br>
+        <strong>Author:</strong> Winston<br>
+        <strong>Publication:</strong> Wiley
+      </td>
+      <td>Rs 399</td>
+      <td><button class="cart-btn"><img src="addtocart.png" alt="Add to Cart"></button></td>
+    </tr>
+
+    <tr>
+      <td class="dept-col">ECE</td>
+      <td><img src="ai.jpg" alt="AI Book" class="book-img"></td>
+      <td>
+        <strong>Book:</strong> AI<br>
+        <strong>Author:</strong> S. Russel<br>
+        <strong>Publication:</strong> Princeton Hall
+      </td>
+      <td>Rs 630</td>
+      <td><button class="cart-btn"><img src="addtocart.png" alt="Add to Cart"></button></td>
+    </tr>
+
+    <tr>
+      <td class="dept-col">EEE</td>
+      <td><img src="java.jpg" alt="Java 2" class="book-img"></td>
+      <td>
+        <strong>Book:</strong> Java 2<br>
+        <strong>Author:</strong> Watson<br>
+        <strong>Publication:</strong> BPB Publications
+      </td>
+      <td>Rs 399</td>
+      <td><button class="cart-btn"><img src="addtocart.png" alt="Add to Cart"></button></td>
+    </tr>
+
+    <tr>
+      <td class="dept-col">CIVIL</td>
+      <td><img src="html.jpg" alt="HTML in 24 Hours" class="book-img"></td>
+      <td>
+        <strong>Book:</strong> HTML in 24 Hours<br>
+        <strong>Author:</strong> Sam Peter<br>
+        <strong>Publication:</strong> Sam Publication
+      </td>
+      <td>Rs 500</td>
+      <td><button class="cart-btn"><img src="addtocart.png" alt="Add to Cart"></button></td>
+    </tr>
+  </table>
+
+</body>
+</html>

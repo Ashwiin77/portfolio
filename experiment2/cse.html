@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSE Book Catalogue</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .catalogue-container {
+      max-width: 1000px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0056b3;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #0056b3;
+      padding-bottom: 10px;
+    }
+
+    .book-card {
+      display: flex;
+      background-color: #eef3fb;
+      border-left: 5px solid #0056b3;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      overflow: hidden;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .book-card:hover {
+      background-color: #dbe9ff;
+      transform: scale(1.01);
+    }
+
+    .book-card img {
+      width: 130px;
+      height: 170px;
+      object-fit: cover;
+    }
+
+    .book-details {
+      padding: 15px 20px;
+      flex-grow: 1;
+    }
+
+    .book-details a {
+      color: #0056b3;
+      text-decoration: none;
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+
+    .book-details div {
+      font-size: 0.95em;
+      margin-top: 6px;
+      color: #333;
+    }
+
+    .description {
+      margin-top: 10px;
+      font-style: italic;
+      color: #444;
+    }
+
+    .price {
+      font-weight: bold;
+      margin-top: 8px;
+      color: #000;
+    }
+
+    .add-to-cart {
+      margin-top: 12px;
+    }
+
+    .add-to-cart button {
+      padding: 8px 14px;
+      background-color: #0056b3;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .add-to-cart button:hover {
+      background-color: #004092;
+    }
+  </style>
+</head>
+<body>
+  <div class="catalogue-container">
+    <h2>CSE Book Catalogue</h2>
+
+    <div class="book-card">
+      <img src="algo.jpg" alt="Introduction to Algorithms" />
+      <div class="book-details">
+        <a href="#">Introduction to Algorithms</a>
+        <div>Author: Thomas H. Cormen</div>
+        <div>Publication: MIT Press</div>
+        <div class="price">Price: ₹950</div>
+        <div class="description">In-depth treatment of algorithms including design, analysis, and complexity.</div>
+        <div class="add-to-cart">
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <img src="os.jpg" alt="Operating System Concepts" />
+      <div class="book-details">
+        <a href="#">Operating System Concepts</a>
+        <div>Author: Abraham Silberschatz</div>
+        <div>Publication: Wiley</div>
+        <div class="price">Price: ₹880</div>
+        <div class="description">Covers fundamental OS principles with examples on processes, memory, and security.</div>
+        <div class="add-to-cart">
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <img src="cn.jpg" alt="Computer Networks" />
+      <div class="book-details">
+        <a href="#">Computer Networks</a>
+        <div>Author: Andrew S. Tanenbaum</div>
+        <div>Publication: Pearson</div>
+        <div class="price">Price: ₹790</div>
+        <div class="description">Thorough guide on networking layers, protocols, and architecture.</div>
+        <div class="add-to-cart">
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <img src="db.jpg" alt="Database System Concepts" />
+      <div class="book-details">
+        <a href="#">Database System Concepts</a>
+        <div>Author: Henry F. Korth</div>
+        <div>Publication: McGraw-Hill</div>
+        <div class="price">Price: ₹820</div>
+        <div class="description">Covers relational models, SQL, database design, and transaction management.</div>
+        <div class="add-to-cart">
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <img src="java.jpg" alt="Java: The Complete Reference" />
+      <div class="book-details">
+        <a href="#">Java: The Complete Reference</a>
+        <div>Author: Herbert Schildt</div>
+        <div>Publication: McGraw-Hill</div>
+        <div class="price">Price: ₹670</div>
+        <div class="description">Comprehensive reference for learning Java with examples, classes, and APIs.</div>
+        <div class="add-to-cart">
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
