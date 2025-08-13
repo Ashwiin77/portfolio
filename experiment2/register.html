@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Registration Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0056b3, #00a8e8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 520px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h2 {
+      text-align: center;
+      color: #0056b3;
+      margin-bottom: 30px;
+      font-weight: 500;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 15px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    input[type="text"], input[type="password"], input[type="email"], input[type="tel"], select, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #0056b3;
+      box-shadow: 0 0 8px rgba(0,86,179,0.3);
+      outline: none;
+    }
+
+    textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    .radio-group, .checkbox-group {
+      display: flex;
+      gap: 20px;
+      margin-top: 5px;
+      flex-wrap: wrap;
+    }
+
+    .radio-group label, .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin: 0;
+    }
+
+    .dob {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    .dob select {
+      flex: 1;
+    }
+
+    .section-title {
+      margin-top: 25px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #0056b3;
+      border-bottom: 1px solid #0056b3;
+      padding-bottom: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 25px;
+      background: linear-gradient(135deg, #0056b3, #00a8e8);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #004092, #0086c7);
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive adjustments */
+    @media(max-width: 550px){
+      .dob {
+        flex-direction: column;
+      }
+      .radio-group, .checkbox-group {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registration Form</h2>
+    <form>
+      <!-- Name -->
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <!-- Password -->
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter a strong password" required>
+
+      <!-- Email -->
+      <label for="email">E-mail ID</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+      <!-- Phone -->
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+      <!-- Sex -->
+      <div class="section-title">Sex</div>
+      <div class="radio-group">
+        <label><input type="radio" name="sex" value="male" required> Male</label>
+        <label><input type="radio" name="sex" value="female"> Female</label>
+        <label><input type="radio" name="sex" value="other"> Other</label>
+      </div>
+
+      <!-- DOB -->
+      <div class="section-title">Date of Birth</div>
+      <div class="dob">
+        <select name="day" required>
+          <option value="">Day</option>
+          <script>
+            for(let d=1; d<=31; d++){document.write(`<option value="${d}">${d}</option>`);}
+          </script>
+        </select>
+        <select name="month" required>
+          <option value="">Month</option>
+          <option>January</option><option>February</option><option>March</option>
+          <option>April</option><option>May</option><option>June</option>
+          <option>July</option><option>August</option><option>September</option>
+          <option>October</option><option>November</option><option>December</option>
+        </select>
+        <select name="year" required>
+          <option value="">Year</option>
+          <script>
+            const yearNow = new Date().getFullYear();
+            for(let y=yearNow; y>=1950; y--){document.write(`<option value="${y}">${y}</option>`);}
+          </script>
+        </select>
+      </div>
+
+      <!-- Languages -->
+      <div class="section-title">Languages Known</div>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="lang" value="English"> English</label>
+        <label><input type="checkbox" name="lang" value="Telugu"> Telugu</label>
+        <label><input type="checkbox" name="lang" value="Hindi"> Hindi</label>
+        <label><input type="checkbox" name="lang" value="Tamil"> Tamil</label>
+      </div>
+
+      <!-- Address -->
+      <label for="address">Address</label>
+      <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+
+      <!-- Submit -->
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</body>
+</html>

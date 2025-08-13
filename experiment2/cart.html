@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shopping Cart</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+    .cart-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #0056b3;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      vertical-align: middle;
+    }
+    th {
+      background-color: #0056b3;
+      color: white;
+    }
+    img {
+      max-width: 60px;
+      border-radius: 5px;
+    }
+    .remove-btn {
+      background-color: #dc3545;
+      color: white;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .remove-btn:hover {
+      background-color: #b02a37;
+    }
+    .total {
+      text-align: right;
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .back-link:hover {
+      background-color: #1e7e34;
+    }
+  </style>
+</head>
+<body>
+  <div class="cart-container">
+    <h2>Your Cart</h2>
+    <table id="cartTable">
+      <tr>
+        <th>Image</th>
+        <th>Book Title</th>
+        <th>Price (₹)</th>
+        <th>Quantity</th>
+        <th>Total (₹)</th>
+        <th>Action</th>
+      </tr>
+    </table>
+    <div class="total" id="cartTotal">Total: ₹0</div>
+    <a href="ece.html" class="back-link">← Continue Shopping</a>
+  </div>
+
+  <script>
+    function loadCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let table = document.getElementById('cartTable');
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        let row = table.insertRow();
+
+        // Image cell
+        let imgCell = row.insertCell(0);
+        let img = document.createElement('img');
+        img.src = item.image; // book image stored in localStorage
+        img.alt = item.title;
+        imgCell.appendChild(img);
+
+        // Other details
+        row.insertCell(1).innerText = item.title;
+        row.insertCell(2).innerText = item.price;
+        row.insertCell(3).innerText = item.quantity;
+        row.insertCell(4).innerText = item.price * item.quantity;
+
+        total += item.price * item.quantity;
+
+        // Remove button
+        let removeBtn = document.createElement('button');
+        removeBtn.innerText = "Remove";
+        removeBtn.className = "remove-btn";
+        removeBtn.onclick = () => removeItem(index);
+        row.insertCell(5).appendChild(removeBtn);
+      });
+
+      document.getElementById('cartTotal').innerText = "Total: ₹" + total;
+    }
+
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      location.reload();
+    }
+
+    loadCart();
+  </script>
+</body>
+</html>
